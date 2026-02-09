@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import { useNavigate } from 'react-router-dom';
 
 const fragrances = [
   {
@@ -191,6 +192,7 @@ const reviews = [
 ];
 
 function Index() {
+  const navigate = useNavigate();
   const [selectedFragrance, setSelectedFragrance] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState('home');
   const [catalogOpen, setCatalogOpen] = useState(false);
@@ -247,7 +249,7 @@ function Index() {
                         Премиум коллекция
                       </button>
                       <button 
-                        onClick={() => scrollToSection('women-catalog')}
+                        onClick={() => navigate('/women-perfume')}
                         className="w-full text-left px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 text-sm font-medium flex items-center gap-2 group"
                       >
                         <Icon name="Heart" size={16} className="text-muted group-hover:scale-110 transition-transform" />
@@ -416,42 +418,6 @@ function Index() {
               </div>
             </div>
           )}
-        </div>
-      </section>
-
-      <section id="women-catalog" className="py-20 px-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-serif font-light mb-4">Женский парфюм</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Эксклюзивная коллекция премиальных ароматов для женщин
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {womenPerfumes.map((perfume, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-xl transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${(index % 20) * 30}ms` }}
-              >
-                <CardContent className="p-5 space-y-3">
-                  <div className="flex items-start justify-between gap-2">
-                    <Badge variant="secondary" className="font-sans text-xs shrink-0">
-                      {perfume.brand}
-                    </Badge>
-                    <span className="font-serif text-lg font-semibold whitespace-nowrap">{perfume.price.toLocaleString('ru-RU')} ₽</span>
-                  </div>
-                  <h3 className="text-base font-sans font-medium leading-tight min-h-[2.5rem]">{perfume.name}</h3>
-                  <p className="text-xs text-muted-foreground">{perfume.volume}</p>
-                  <Button className="w-full font-sans text-sm mt-2" size="sm">
-                    <Icon name="ShoppingCart" size={16} className="mr-2" />
-                    В корзину
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
