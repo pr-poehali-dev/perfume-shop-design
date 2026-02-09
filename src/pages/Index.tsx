@@ -120,32 +120,60 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
-        <div className="container mx-auto px-6 py-4">
+      <nav className="fixed top-0 w-full bg-gradient-to-b from-background via-background/95 to-background/80 backdrop-blur-md z-50 border-b border-border/50 shadow-sm">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-secondary/5 via-transparent to-transparent pointer-events-none"></div>
+        <div className="container mx-auto px-6 py-5 relative">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-serif font-bold tracking-wide">LUMIÈRE</h1>
-            <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => scrollToSection('catalog')} className="text-sm hover:text-primary transition-colors">Каталог</button>
-              <button onClick={() => scrollToSection('about')} className="text-sm hover:text-primary transition-colors">О бренде</button>
-              <button onClick={() => scrollToSection('blog')} className="text-sm hover:text-primary transition-colors">Блог</button>
-              <button onClick={() => scrollToSection('reviews')} className="text-sm hover:text-primary transition-colors">Отзывы</button>
-              <button onClick={() => scrollToSection('delivery')} className="text-sm hover:text-primary transition-colors">Доставка</button>
-              <button onClick={() => scrollToSection('contacts')} className="text-sm hover:text-primary transition-colors">Контакты</button>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center">
+                <Icon name="Sparkles" size={20} className="text-primary-foreground" />
+              </div>
+              <h1 className="text-2xl font-serif font-bold tracking-wide bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">LUMIÈRE</h1>
             </div>
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="icon">
+            <div className="hidden md:flex items-center gap-8">
+              <button onClick={() => scrollToSection('catalog')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+                Каталог
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+                О бренде
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('blog')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+                Блог
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('reviews')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+                Отзывы
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('delivery')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+                Доставка
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('contacts')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+                Контакты
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+              </button>
+            </div>
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="icon" className="hover:bg-secondary/50">
                 <Icon name="Search" size={20} />
               </Button>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="hover:bg-secondary/50 relative">
                 <Icon name="ShoppingBag" size={20} />
+                <span className="absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">0</span>
               </Button>
             </div>
           </div>
         </div>
       </nav>
 
-      <section id="home" className="pt-24 pb-16 px-6">
-        <div className="container mx-auto">
+      <section id="home" className="pt-24 pb-16 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-transparent pointer-events-none"></div>
+        <div className="absolute top-20 right-10 w-96 h-96 bg-muted/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="container mx-auto relative">
           <div className="grid md:grid-cols-2 gap-12 items-center min-h-[80vh]">
             <div className="space-y-6 animate-fade-in">
               <p className="text-sm uppercase tracking-widest text-muted-foreground">Коллекция 2026</p>
@@ -156,7 +184,7 @@ export default function Index() {
                 Откройте мир изысканной парфюмерии. Каждый аромат — уникальная история, созданная из драгоценных ингредиентов.
               </p>
               <div className="flex gap-4 pt-4">
-                <Button onClick={() => scrollToSection('catalog')} size="lg" className="font-sans">
+                <Button onClick={() => scrollToSection('catalog')} size="lg" className="font-sans shadow-lg hover:shadow-xl transition-shadow">
                   Смотреть каталог
                 </Button>
                 <Button onClick={() => scrollToSection('about')} variant="outline" size="lg" className="font-sans">
@@ -165,7 +193,8 @@ export default function Index() {
               </div>
             </div>
             <div className="relative animate-fade-in-up">
-              <div className="aspect-square rounded-2xl overflow-hidden">
+              <div className="absolute -inset-4 bg-gradient-to-r from-secondary/30 to-muted/30 rounded-2xl blur-2xl"></div>
+              <div className="aspect-square rounded-2xl overflow-hidden relative">
                 <img 
                   src="https://cdn.poehali.dev/projects/16761958-9f40-4c0a-86fa-891d5a3aada1/files/52d4f521-cd7a-41d7-87b4-396cd71ff258.jpg"
                   alt="Luxury perfume"
@@ -508,51 +537,90 @@ export default function Index() {
         </div>
       </section>
 
-      <footer className="bg-primary text-primary-foreground py-12 px-6">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+      <footer className="relative bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-16 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-transparent pointer-events-none"></div>
+        <div className="absolute top-10 right-20 w-64 h-64 bg-primary-foreground/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-10 left-20 w-80 h-80 bg-primary-foreground/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div className="container mx-auto relative">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <h3 className="font-serif text-2xl mb-4">LUMIÈRE</h3>
-              <p className="text-sm opacity-80">Искусство создания уникальных ароматов</p>
-            </div>
-            
-            <div>
-              <h4 className="font-serif text-lg mb-3">Навигация</h4>
-              <div className="space-y-2 text-sm opacity-80">
-                <p className="cursor-pointer hover:opacity-100 transition-opacity">Каталог</p>
-                <p className="cursor-pointer hover:opacity-100 transition-opacity">О бренде</p>
-                <p className="cursor-pointer hover:opacity-100 transition-opacity">Блог</p>
-                <p className="cursor-pointer hover:opacity-100 transition-opacity">Доставка</p>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-primary-foreground/10 backdrop-blur rounded-full flex items-center justify-center">
+                  <Icon name="Sparkles" size={20} className="text-primary-foreground" />
+                </div>
+                <h3 className="font-serif text-2xl">LUMIÈRE</h3>
               </div>
-            </div>
-            
-            <div>
-              <h4 className="font-serif text-lg mb-3">Информация</h4>
-              <div className="space-y-2 text-sm opacity-80">
-                <p className="cursor-pointer hover:opacity-100 transition-opacity">Политика конфиденциальности</p>
-                <p className="cursor-pointer hover:opacity-100 transition-opacity">Условия возврата</p>
-                <p className="cursor-pointer hover:opacity-100 transition-opacity">Оплата</p>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-serif text-lg mb-3">Соцсети</h4>
-              <div className="flex gap-4">
-                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+              <p className="text-sm opacity-80 leading-relaxed">Искусство создания уникальных ароматов с 2015 года</p>
+              <div className="mt-6 flex gap-3">
+                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10 transition-all hover:scale-110">
                   <Icon name="Instagram" size={20} />
                 </Button>
-                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10 transition-all hover:scale-110">
                   <Icon name="Facebook" size={20} />
                 </Button>
-                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10 transition-all hover:scale-110">
                   <Icon name="Youtube" size={20} />
                 </Button>
               </div>
             </div>
+            
+            <div>
+              <h4 className="font-serif text-lg mb-4 flex items-center gap-2">
+                <Icon name="Layers" size={18} />
+                Навигация
+              </h4>
+              <div className="space-y-2.5 text-sm">
+                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Каталог</p>
+                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ О бренде</p>
+                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Блог</p>
+                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Доставка</p>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-serif text-lg mb-4 flex items-center gap-2">
+                <Icon name="FileText" size={18} />
+                Информация
+              </h4>
+              <div className="space-y-2.5 text-sm">
+                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Политика конфиденциальности</p>
+                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Условия возврата</p>
+                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Оплата</p>
+                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Гарантии качества</p>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-serif text-lg mb-4 flex items-center gap-2">
+                <Icon name="Mail" size={18} />
+                Контакты
+              </h4>
+              <div className="space-y-3 text-sm opacity-90">
+                <p className="flex items-center gap-2">
+                  <Icon name="Phone" size={16} />
+                  +7 (495) 123-45-67
+                </p>
+                <p className="flex items-center gap-2">
+                  <Icon name="Mail" size={16} />
+                  hello@lumiere-parfum.ru
+                </p>
+                <p className="flex items-start gap-2">
+                  <Icon name="MapPin" size={16} className="mt-0.5" />
+                  <span>г. Москва, ул. Тверская, 15</span>
+                </p>
+              </div>
+            </div>
           </div>
           
-          <div className="border-t border-primary-foreground/20 pt-6 text-center text-sm opacity-60">
-            © 2026 LUMIÈRE. Все права защищены.
+          <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm opacity-60">© 2026 LUMIÈRE. Все права защищены.</p>
+            <div className="flex items-center gap-6 text-xs opacity-60">
+              <span className="cursor-pointer hover:opacity-100 transition-opacity">Разработано с любовью</span>
+              <span className="flex items-center gap-1">
+                <Icon name="Heart" size={14} className="fill-current" />
+              </span>
+            </div>
           </div>
         </div>
       </footer>
