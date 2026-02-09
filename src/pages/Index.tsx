@@ -193,6 +193,7 @@ const reviews = [
 function Index() {
   const [selectedFragrance, setSelectedFragrance] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState('home');
+  const [catalogOpen, setCatalogOpen] = useState(false);
 
   const selectedPerfume = fragrances.find(f => f.id === selectedFragrance);
   const similarPerfumes = selectedPerfume 
@@ -201,6 +202,7 @@ function Index() {
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
+    setCatalogOpen(false);
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -229,9 +231,32 @@ function Index() {
               </div>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => scrollToSection('catalog')} className="px-4 py-2 text-sm font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:shadow-lg hover:scale-105">
-                Каталог
-              </button>
+              <div className="relative" onMouseEnter={() => setCatalogOpen(true)} onMouseLeave={() => setCatalogOpen(false)}>
+                <button className="px-4 py-2 text-sm font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center gap-1">
+                  Каталог
+                  <Icon name="ChevronDown" size={16} className={`transition-transform duration-300 ${catalogOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {catalogOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white/90 backdrop-blur-2xl rounded-2xl shadow-2xl border border-secondary/20 overflow-hidden animate-fade-in z-50">
+                    <div className="p-3 space-y-1">
+                      <button 
+                        onClick={() => scrollToSection('catalog')}
+                        className="w-full text-left px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 text-sm font-medium flex items-center gap-2 group"
+                      >
+                        <Icon name="Sparkles" size={16} className="text-secondary group-hover:scale-110 transition-transform" />
+                        Премиум коллекция
+                      </button>
+                      <button 
+                        onClick={() => scrollToSection('women-catalog')}
+                        className="w-full text-left px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 text-sm font-medium flex items-center gap-2 group"
+                      >
+                        <Icon name="Heart" size={16} className="text-muted group-hover:scale-110 transition-transform" />
+                        Женский парфюм
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
               <button onClick={() => scrollToSection('about')} className="px-4 py-2 text-sm font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:shadow-lg hover:scale-105">
                 О бренде
               </button>
