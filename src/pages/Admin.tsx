@@ -4,19 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import { useNavigate } from 'react-router-dom';
-
-interface Product {
-  id: string;
-  name: string;
-  category: 'premium' | 'women';
-  price: number;
-  volume?: string;
-  notes?: string[];
-  description?: string;
-  brand: string;
-  image: string;
-  inStock: boolean;
-}
+import { initialProducts, type Product } from '@/data/initialProducts';
 
 function Admin() {
   const navigate = useNavigate();
@@ -40,29 +28,6 @@ function Admin() {
     if (savedProducts) {
       setProducts(JSON.parse(savedProducts));
     } else {
-      const initialProducts: Product[] = [
-        {
-          id: '1',
-          name: 'Rose Élégante',
-          category: 'premium',
-          price: 12500,
-          notes: ['Роза', 'Пион', 'Белый мускус'],
-          description: 'Изысканная композиция с нотами дамасской розы',
-          brand: 'LUMIÈRE',
-          image: 'https://cdn.poehali.dev/projects/16761958-9f40-4c0a-86fa-891d5a3aada1/files/52d4f521-cd7a-41d7-87b4-396cd71ff258.jpg',
-          inStock: true
-        },
-        {
-          id: '2',
-          name: 'Lancome Idole L\'Eau De Parfum Nectar',
-          category: 'women',
-          price: 4650,
-          volume: '100 ml',
-          brand: 'Lancome',
-          image: 'https://cdn.poehali.dev/projects/16761958-9f40-4c0a-86fa-891d5a3aada1/files/52d4f521-cd7a-41d7-87b4-396cd71ff258.jpg',
-          inStock: true
-        }
-      ];
       setProducts(initialProducts);
       localStorage.setItem('shop_products', JSON.stringify(initialProducts));
     }
@@ -290,6 +255,17 @@ function ProductForm({
 
   const [notesInput, setNotesInput] = useState(product?.notes?.join(', ') || '');
 
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({ ...formData, image: reader.result as string });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const notes = notesInput.split(',').map(n => n.trim()).filter(Boolean);
@@ -370,19 +346,20 @@ function ProductForm({
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-2">URL изображения</label>
-            <input
-              type="url"
-              value={formData.image}
-              onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-              required
-            />
-            {formData.image && (
-              <div className="mt-2 aspect-video w-full max-w-xs rounded-lg overflow-hidden bg-muted">
-                <img src={formData.image} alt="Preview" className="w-full h-full object-cover" />
-              </div>
-            )}
+            <label className="block text-sm font-medium mb-2">Изображение товара</label>
+            <div className="space-y-3">
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
+              />
+              {formData.image && (
+                <div className="mt-2 aspect-video w-full max-w-xs rounded-lg overflow-hidden bg-muted border-2 border-secondary/20">
+                  <img src={formData.image} alt="Preview" className="w-full h-full object-cover" />
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="flex items-center gap-2">
