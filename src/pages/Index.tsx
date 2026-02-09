@@ -119,13 +119,15 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 w-full bg-gradient-to-r from-primary/5 via-secondary/10 to-muted/5 backdrop-blur-xl z-50 border-b-2 border-secondary/30 shadow-lg">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-secondary/20 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-muted/20 to-transparent rounded-full blur-3xl"></div>
-        </div>
-        <div className="container mx-auto px-6 py-6 relative">
+    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/5 to-muted/10 relative">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-secondary/30 via-muted/20 to-transparent rounded-full blur-3xl animate-pulse" style={{animationDuration: '4s'}}></div>
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-primary/20 via-secondary/15 to-transparent rounded-full blur-3xl animate-pulse" style={{animationDuration: '6s', animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-gradient-to-l from-muted/25 to-transparent rounded-full blur-3xl animate-pulse" style={{animationDuration: '5s', animationDelay: '2s'}}></div>
+      </div>
+      <nav className="fixed top-0 w-full bg-white/70 backdrop-blur-2xl z-50 border-b border-secondary/20 shadow-2xl shadow-secondary/10">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-secondary/5 to-transparent pointer-events-none"></div>
+        <div className="container mx-auto px-6 py-5 relative">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="relative">
@@ -140,52 +142,43 @@ function Index() {
               </div>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => scrollToSection('catalog')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+              <button onClick={() => scrollToSection('catalog')} className="px-4 py-2 text-sm font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:shadow-lg hover:scale-105">
                 Каталог
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+              <button onClick={() => scrollToSection('about')} className="px-4 py-2 text-sm font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:shadow-lg hover:scale-105">
                 О бренде
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </button>
-              <button onClick={() => scrollToSection('blog')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+              <button onClick={() => scrollToSection('blog')} className="px-4 py-2 text-sm font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:shadow-lg hover:scale-105">
                 Блог
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </button>
-              <button onClick={() => scrollToSection('reviews')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+              <button onClick={() => scrollToSection('reviews')} className="px-4 py-2 text-sm font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:shadow-lg hover:scale-105">
                 Отзывы
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </button>
-              <button onClick={() => scrollToSection('delivery')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+              <button onClick={() => scrollToSection('delivery')} className="px-4 py-2 text-sm font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:shadow-lg hover:scale-105">
                 Доставка
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </button>
-              <button onClick={() => scrollToSection('contacts')} className="text-sm font-medium hover:text-primary transition-colors relative group">
+              <button onClick={() => scrollToSection('contacts')} className="px-4 py-2 text-sm font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:shadow-lg hover:scale-105">
                 Контакты
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </button>
             </div>
-            <div className="flex items-center gap-3">
-              <Button variant="ghost" size="icon" className="hover:bg-gradient-to-br hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:scale-110">
-                <Icon name="Search" size={22} />
-              </Button>
+            <div className="flex items-center gap-2">
+              <button className="w-11 h-11 rounded-full bg-gradient-to-br from-secondary/10 to-muted/10 hover:from-secondary/20 hover:to-muted/20 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 border border-secondary/20">
+                <Icon name="Search" size={20} />
+              </button>
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary rounded-full blur-md opacity-0 group-hover:opacity-60 transition-opacity"></div>
-                <Button size="icon" className="relative bg-gradient-to-br from-primary to-primary/80 hover:from-primary hover:to-secondary shadow-lg">
-                  <Icon name="ShoppingBag" size={22} />
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-white text-xs rounded-full flex items-center justify-center font-bold shadow-md">0</span>
-                </Button>
+                <div className="absolute -inset-1 bg-gradient-to-br from-secondary via-primary to-muted rounded-full blur opacity-30 group-hover:opacity-70 transition duration-300"></div>
+                <button className="relative w-11 h-11 rounded-full bg-gradient-to-br from-primary via-secondary to-primary flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl text-white">
+                  <Icon name="ShoppingBag" size={20} />
+                  <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-gradient-to-br from-muted to-secondary text-white text-[10px] rounded-full flex items-center justify-center font-bold shadow-lg ring-2 ring-white">0</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </nav>
 
-      <section id="home" className="pt-24 pb-16 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-transparent pointer-events-none"></div>
-        <div className="absolute top-20 right-10 w-96 h-96 bg-muted/30 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-20 left-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="container mx-auto relative">
+      <section id="home" className="pt-32 pb-20 px-6 relative overflow-hidden">
+        <div className="container mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center min-h-[80vh]">
             <div className="space-y-6 animate-fade-in">
               <p className="text-sm uppercase tracking-widest text-muted-foreground">Коллекция 2026</p>
@@ -549,11 +542,10 @@ function Index() {
         </div>
       </section>
 
-      <footer className="relative bg-gradient-to-br from-primary via-primary/95 to-[#0a0a0f] text-primary-foreground py-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-secondary/20 via-muted/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-muted/15 via-secondary/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-to-r from-primary-foreground/5 to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <footer className="relative bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white py-20 px-6 overflow-hidden mt-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(214,188,250,0.15),transparent_50%),radial-gradient(circle_at_70%_80%,_rgba(255,222,226,0.1),transparent_50%)]"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-secondary/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-muted/20 to-transparent rounded-full blur-3xl"></div>
         
         <div className="container mx-auto relative">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
@@ -566,15 +558,15 @@ function Index() {
               </div>
               <p className="text-sm opacity-80 leading-relaxed">Искусство создания уникальных ароматов с 2015 года</p>
               <div className="mt-6 flex gap-3">
-                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10 transition-all hover:scale-110">
-                  <Icon name="Instagram" size={20} />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10 transition-all hover:scale-110">
-                  <Icon name="Facebook" size={20} />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10 transition-all hover:scale-110">
-                  <Icon name="Youtube" size={20} />
-                </Button>
+                <button className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-br hover:from-secondary hover:to-primary backdrop-blur flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl">
+                  <Icon name="Instagram" size={18} />
+                </button>
+                <button className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-br hover:from-secondary hover:to-primary backdrop-blur flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl">
+                  <Icon name="Facebook" size={18} />
+                </button>
+                <button className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-br hover:from-secondary hover:to-primary backdrop-blur flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl">
+                  <Icon name="Youtube" size={18} />
+                </button>
               </div>
             </div>
             
@@ -584,10 +576,10 @@ function Index() {
                 Навигация
               </h4>
               <div className="space-y-2.5 text-sm">
-                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Каталог</p>
-                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ О бренде</p>
-                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Блог</p>
-                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Доставка</p>
+                <button className="text-left opacity-80 hover:opacity-100 hover:translate-x-2 transition-all duration-300 hover:text-secondary">→ Каталог</button>
+                <button className="text-left opacity-80 hover:opacity-100 hover:translate-x-2 transition-all duration-300 hover:text-secondary">→ О бренде</button>
+                <button className="text-left opacity-80 hover:opacity-100 hover:translate-x-2 transition-all duration-300 hover:text-secondary">→ Блог</button>
+                <button className="text-left opacity-80 hover:opacity-100 hover:translate-x-2 transition-all duration-300 hover:text-secondary">→ Доставка</button>
               </div>
             </div>
             
@@ -597,10 +589,10 @@ function Index() {
                 Информация
               </h4>
               <div className="space-y-2.5 text-sm">
-                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Политика конфиденциальности</p>
-                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Условия возврата</p>
-                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Оплата</p>
-                <p className="cursor-pointer opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">→ Гарантии качества</p>
+                <button className="text-left opacity-80 hover:opacity-100 hover:translate-x-2 transition-all duration-300 hover:text-muted">→ Политика конфиденциальности</button>
+                <button className="text-left opacity-80 hover:opacity-100 hover:translate-x-2 transition-all duration-300 hover:text-muted">→ Условия возврата</button>
+                <button className="text-left opacity-80 hover:opacity-100 hover:translate-x-2 transition-all duration-300 hover:text-muted">→ Оплата</button>
+                <button className="text-left opacity-80 hover:opacity-100 hover:translate-x-2 transition-all duration-300 hover:text-muted">→ Гарантии качества</button>
               </div>
             </div>
             
