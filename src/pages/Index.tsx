@@ -103,7 +103,7 @@ const reviews = [
   }
 ];
 
-export default function Index() {
+function Index() {
   const [selectedFragrance, setSelectedFragrance] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -627,3 +627,5 @@ export default function Index() {
     </div>
   );
 }
+
+export default Index;
