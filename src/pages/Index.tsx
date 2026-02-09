@@ -67,6 +67,93 @@ const fragrances = [
   },
 ];
 
+const womenPerfumes = [
+  { name: 'Lancome Idole L\'Eau De Parfum Nectar', volume: '100 ml', price: 4650, brand: 'Lancome' },
+  { name: 'Trussardi Donna Pink Marina', volume: '100 ml', price: 4650, brand: 'Trussardi' },
+  { name: 'Tiffany & Co Rose Gold Intense', volume: '75 ml', price: 4750, brand: 'Tiffany' },
+  { name: 'Lancome La Vie Est Belle Vanille Nude', volume: '100 ml', price: 4750, brand: 'Lancome' },
+  { name: 'Yves Saint Laurent Libre L\'Eau Nue', volume: '90 ml', price: 4650, brand: 'Yves Saint Laurent' },
+  { name: 'Tom Ford Tobacco Vanille', volume: '100 ml', price: 4499, brand: 'Tom Ford' },
+  { name: 'Dolce & Gabbana 3 L\'imperatrice', volume: '100 ml', price: 4299, brand: 'Dolce and Gabbana' },
+  { name: 'Tom Ford Vanilla Sex', volume: '100 ml', price: 4499, brand: 'Tom Ford' },
+  { name: 'Chloe Chloe Eau de Parfum', volume: '75 ml', price: 4399, brand: 'Chloe' },
+  { name: 'Lancome La Vie Est Belle Sparkling Edition', volume: '100 ml', price: 4750, brand: 'Lancome' },
+  { name: 'Givenchy Ange Ou Demon Le Secret', volume: '100 ml', price: 4650, brand: 'Givenchy' },
+  { name: 'Ex Nihilo Fleur Narcotique Signature Musc', volume: '100 ml', price: 4750, brand: 'Ex Nihilo' },
+  { name: 'Trussardi Delicate Rose', volume: '100 ml', price: 4550, brand: 'Trussardi' },
+  { name: 'Chanel Coco Mademoiselle', volume: '100 ml', price: 4450, brand: 'Chanel' },
+  { name: 'Chanel Chance Eau Fraiche', volume: '100 ml', price: 4550, brand: 'Chanel' },
+  { name: 'Trussardi Donna', volume: '100 ml', price: 4550, brand: 'Trussardi' },
+  { name: 'Escentric Molecules Molecule 01 + Mandarin', volume: '100 ml', price: 4550, brand: 'Escentric Molecules' },
+  { name: 'Dolce & Gabbana Light Blue', volume: '100 ml', price: 4450, brand: 'Dolce and Gabbana' },
+  { name: 'Dolce & Gabbana Devotion', volume: '100 ml', price: 4750, brand: 'Dolce and Gabbana' },
+  { name: 'Attar Collection Musk Kashmir', volume: '100 ml', price: 4950, brand: 'Attar Collection' },
+  { name: 'Flora by Gucci Flora Gorgeous Gardenia', volume: '100 ml', price: 4650, brand: 'Gucci' },
+  { name: 'Tom Ford Electric Cherry', volume: '100 ml', price: 4650, brand: 'Tom Ford' },
+  { name: 'Dolce & Gabbana Light Blue Sun Pour Femme', volume: '100 ml', price: 4450, brand: 'Dolce and Gabbana' },
+  { name: 'Lancome Miracle', volume: '100 ml', price: 4450, brand: 'Lancome' },
+  { name: 'Yves Saint Laurent Libre Eau de Parfum Intense', volume: '90 ml', price: 4550, brand: 'Yves Saint Laurent' },
+  { name: 'My Burberry Burberry', volume: '90 ml', price: 4550, brand: 'Burberry' },
+  { name: 'Lancome Tresor Midnight Rose', volume: '75 ml', price: 4550, brand: 'Lancome' },
+  { name: 'Zarkoperfume Molecule The Muse', volume: '100 ml', price: 4550, brand: 'Zarkoperfume' },
+  { name: 'Ex Nihilo Viper Green', volume: '100 ml', price: 4750, brand: 'Ex Nihilo' },
+  { name: 'Tom Ford Fucking Fabulous', volume: '100 ml', price: 4550, brand: 'Tom Ford' },
+  { name: 'Tom Ford Rose Prick', volume: '100 ml', price: 4399, brand: 'Tom Ford' },
+  { name: 'Lacoste L.12.12 Silver Rose', volume: '100 ml', price: 4550, brand: 'Lacoste' },
+  { name: 'Набор из 4 ароматов Tiziana Terenzi', volume: '4х35 ml', price: 4750, brand: 'Tiziana Terenzi' },
+  { name: 'Chanel Coco Mademoiselle Intense', volume: '100 ml', price: 4499, brand: 'Chanel' },
+  { name: 'Versace Bright Crystal Parfum', volume: '100 ml', price: 4550, brand: 'Versace' },
+  { name: 'Lancome La Vie Est Belle', volume: '75 ml', price: 4550, brand: 'Lancome' },
+  { name: 'Dolce & Gabbana L\'Imperatrice Royale', volume: '100 ml', price: 4499, brand: 'Dolce and Gabbana' },
+  { name: 'Givenchy Ange ou Demon Le Secret Eau De Toilette', volume: '100 ml', price: 4550, brand: 'Givenchy' },
+  { name: 'Yves Saint Laurent Black Opium', volume: '90 ml', price: 4650, brand: 'Yves Saint Laurent' },
+  { name: 'Tom Ford Lost Cherry', volume: '50 ml', price: 4699, brand: 'Tom Ford' },
+  { name: 'Gucci Guilty Elixir De Parfum Pour Femme', volume: '60 ml', price: 4650, brand: 'Gucci' },
+  { name: 'Kayali Yum Boujee Marshmallow 81', volume: '100 ml', price: 4850, brand: 'Kayali' },
+  { name: 'Dior Hypnotic Poison', volume: '100 ml', price: 4750, brand: 'Dior' },
+  { name: 'Givenchy L\'Interdit (2018)', volume: '100 ml', price: 4650, brand: 'Givenchy' },
+  { name: 'Tom Ford Electric Cherry', volume: '50 ml', price: 4450, brand: 'Tom Ford' },
+  { name: 'Giorgio Armani Si Passione Intense', volume: '100 ml', price: 4650, brand: 'Armani' },
+  { name: 'Dolce & Gabbana Q Intense', volume: '100 ml', price: 4650, brand: 'Dolce and Gabbana' },
+  { name: 'Gucci Oud Intense', volume: '90 ml', price: 4650, brand: 'Gucci' },
+  { name: 'Escentric Molecules Molecule 01', volume: '100 ml', price: 4450, brand: 'Escentric Molecules' },
+  { name: 'Dior New Look', volume: '100 ml', price: 4750, brand: 'Dior' },
+  { name: 'Dior Balade Sauvage', volume: '100 ml', price: 4750, brand: 'Dior' },
+  { name: 'Kenzo L\'Eau Kenzo Glacee Pour Femme', volume: '100 ml', price: 4550, brand: 'Kenzo' },
+  { name: 'Hugo Boss Boss Alive Parfum', volume: '80 ml', price: 4650, brand: 'Hugo Boss' },
+  { name: 'Hugo Boss Boss Alive Intense', volume: '80 ml', price: 4650, brand: 'Hugo Boss' },
+  { name: 'Karl Lagerfeld Ikonik Woman', volume: '100 ml', price: 4650, brand: 'Karl Lagerfeld' },
+  { name: 'Lacoste Pour Femme Legere', volume: '90 ml', price: 4650, brand: 'Lacoste' },
+  { name: 'Givenchy Temeraire', volume: '100 ml', price: 4650, brand: 'Givenchy' },
+  { name: 'Tom Ford Noir De Noir', volume: '100 ml', price: 4650, brand: 'Tom Ford' },
+  { name: 'Chanel Chance', volume: '50 ml', price: 4370, brand: 'Chanel' },
+  { name: 'Chanel Chance Eau Tendre', volume: '50 ml', price: 4370, brand: 'Chanel' },
+  { name: 'Byredo Mojave Ghost Absolu de Parfum', volume: '100 ml', price: 4850, brand: 'Byredo' },
+  { name: 'Bvlgari Splendida Patchouli Tentation', volume: '100 ml', price: 4399, brand: 'Bvlgari' },
+  { name: 'Salvatore Ferragamo Incanto Shine', volume: '100 ml', price: 4450, brand: 'Salvatore Ferragamo' },
+  { name: 'Tom Ford Mandarino Di Amalfi', volume: '100 ml', price: 4650, brand: 'Tom Ford' },
+  { name: 'Burberry Goddess', volume: '100 ml', price: 4550, brand: 'Burberry' },
+  { name: 'Versace Bright Crystal', volume: '90 ml', price: 4550, brand: 'Versace' },
+  { name: 'Chanel Chance Eau Fraiche Eau de Parfum', volume: '100 ml', price: 4650, brand: 'Chanel' },
+  { name: 'Ex Nihilo Fleur Narcotique', volume: '100 ml', price: 4990, brand: 'Ex Nihilo' },
+  { name: 'Givenchy Equivoque', volume: '100 ml', price: 4750, brand: 'Givenchy' },
+  { name: 'Escentric Molecules Escentric 02', volume: '100 ml', price: 4550, brand: 'Escentric Molecules' },
+  { name: 'Dior Miss Eau de Parfum 2021', volume: '100 ml', price: 4650, brand: 'Dior' },
+  { name: 'Narciso Rodriguez Narciso Poudree', volume: '90 ml', price: 4550, brand: 'Narciso Rodriguez' },
+  { name: 'Lanvin Eclat d\'Arpege', volume: '100 ml', price: 4550, brand: 'Lanvin' },
+  { name: 'Chanel Chance Eau Tendre', volume: '100 ml', price: 4399, brand: 'Chanel' },
+  { name: 'Lacoste Pour Femme 2003', volume: '90 ml', price: 4550, brand: 'Lacoste' },
+  { name: 'Carolina Herrera Good Girl', volume: '80 ml', price: 4750, brand: 'Carolina Herrera' },
+  { name: 'Tom Ford Lost Cherry', volume: '100 ml', price: 4750, brand: 'Tom Ford' },
+  { name: 'Byredo Rose Of No Man\'s Land Absolu de Parfum', volume: '100 ml', price: 4850, brand: 'Byredo' },
+  { name: 'Chanel Chance Eau Tendre Eau De Parfum', volume: '100 ml', price: 4650, brand: 'Chanel' },
+  { name: 'Chanel Chance', volume: '100 ml', price: 4550, brand: 'Chanel' },
+  { name: 'Tom Ford Eau de Vert Boheme', volume: '50 ml', price: 4399, brand: 'Tom Ford' },
+  { name: 'Tom Ford Soleil Brulant', volume: '50 ml', price: 4399, brand: 'Tom Ford' },
+  { name: 'Tiziana Terenzi Gold Rose Oudh', volume: '100 ml', price: 4850, brand: 'Tiziana Terenzi' },
+  { name: 'Ralph Lauren Romance Rose', volume: '100 ml', price: 4399, brand: 'Ralph Lauren' }
+];
+
 const blogPosts = [
   {
     title: 'Как выбрать парфюм по сезону',
@@ -304,6 +391,42 @@ function Index() {
               </div>
             </div>
           )}
+        </div>
+      </section>
+
+      <section id="women-catalog" className="py-20 px-6">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-serif font-light mb-4">Женский парфюм</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Эксклюзивная коллекция премиальных ароматов для женщин
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {womenPerfumes.map((perfume, index) => (
+              <Card 
+                key={index} 
+                className="group hover:shadow-xl transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${(index % 20) * 30}ms` }}
+              >
+                <CardContent className="p-5 space-y-3">
+                  <div className="flex items-start justify-between gap-2">
+                    <Badge variant="secondary" className="font-sans text-xs shrink-0">
+                      {perfume.brand}
+                    </Badge>
+                    <span className="font-serif text-lg font-semibold whitespace-nowrap">{perfume.price.toLocaleString('ru-RU')} ₽</span>
+                  </div>
+                  <h3 className="text-base font-sans font-medium leading-tight min-h-[2.5rem]">{perfume.name}</h3>
+                  <p className="text-xs text-muted-foreground">{perfume.volume}</p>
+                  <Button className="w-full font-sans text-sm mt-2" size="sm">
+                    <Icon name="ShoppingCart" size={16} className="mr-2" />
+                    В корзину
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
