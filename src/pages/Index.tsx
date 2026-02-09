@@ -120,15 +120,24 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 w-full bg-gradient-to-b from-background via-background/95 to-background/80 backdrop-blur-md z-50 border-b border-border/50 shadow-sm">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-secondary/5 via-transparent to-transparent pointer-events-none"></div>
-        <div className="container mx-auto px-6 py-5 relative">
+      <nav className="fixed top-0 w-full bg-gradient-to-r from-primary/5 via-secondary/10 to-muted/5 backdrop-blur-xl z-50 border-b-2 border-secondary/30 shadow-lg">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-secondary/20 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-muted/20 to-transparent rounded-full blur-3xl"></div>
+        </div>
+        <div className="container mx-auto px-6 py-6 relative">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center">
-                <Icon name="Sparkles" size={20} className="text-primary-foreground" />
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary rounded-2xl blur-md opacity-60"></div>
+                <div className="relative w-12 h-12 bg-gradient-to-br from-secondary via-primary/80 to-primary rounded-2xl flex items-center justify-center shadow-lg">
+                  <Icon name="Sparkles" size={24} className="text-white" />
+                </div>
               </div>
-              <h1 className="text-2xl font-serif font-bold tracking-wide bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">LUMIÈRE ✨ NEW</h1>
+              <div>
+                <h1 className="text-3xl font-serif font-bold tracking-wider bg-gradient-to-r from-primary via-secondary/80 to-primary bg-clip-text text-transparent">LUMIÈRE</h1>
+                <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-sans">Parfum Boutique</p>
+              </div>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('catalog')} className="text-sm font-medium hover:text-primary transition-colors relative group">
@@ -156,14 +165,17 @@ function Index() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </button>
             </div>
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" className="hover:bg-secondary/50">
-                <Icon name="Search" size={20} />
+            <div className="flex items-center gap-3">
+              <Button variant="ghost" size="icon" className="hover:bg-gradient-to-br hover:from-secondary/20 hover:to-muted/20 transition-all duration-300 hover:scale-110">
+                <Icon name="Search" size={22} />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-secondary/50 relative">
-                <Icon name="ShoppingBag" size={20} />
-                <span className="absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">0</span>
-              </Button>
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary rounded-full blur-md opacity-0 group-hover:opacity-60 transition-opacity"></div>
+                <Button size="icon" className="relative bg-gradient-to-br from-primary to-primary/80 hover:from-primary hover:to-secondary shadow-lg">
+                  <Icon name="ShoppingBag" size={22} />
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-white text-xs rounded-full flex items-center justify-center font-bold shadow-md">0</span>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -537,10 +549,11 @@ function Index() {
         </div>
       </section>
 
-      <footer className="relative bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-transparent pointer-events-none"></div>
-        <div className="absolute top-10 right-20 w-64 h-64 bg-primary-foreground/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-10 left-20 w-80 h-80 bg-primary-foreground/5 rounded-full blur-3xl pointer-events-none"></div>
+      <footer className="relative bg-gradient-to-br from-primary via-primary/95 to-[#0a0a0f] text-primary-foreground py-20 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-secondary/20 via-muted/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-muted/15 via-secondary/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-to-r from-primary-foreground/5 to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         
         <div className="container mx-auto relative">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
