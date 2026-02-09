@@ -128,7 +128,7 @@ function Index() {
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center">
                 <Icon name="Sparkles" size={20} className="text-primary-foreground" />
               </div>
-              <h1 className="text-2xl font-serif font-bold tracking-wide bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">LUMIÈRE</h1>
+              <h1 className="text-2xl font-serif font-bold tracking-wide bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">LUMIÈRE ✨ NEW</h1>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('catalog')} className="text-sm font-medium hover:text-primary transition-colors relative group">
